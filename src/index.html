@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script type="module" crossorigin src="./app.js"></script>
+  <link rel="stylesheet" crossorigin href="./scss/app.scss">
+
+</head>
+<body>
+
+    <nav class="py-3 bg-NavBg">
+        <div class="lg:px-20 px-8 mx-auto container">
+            <div data-aos="fade-up" data-aos-duration="2500" class="hidden sm:hidden lg:block">
+                <div class="flex justify-between H6 items-center visible">
+                    <img class="max-h-[1.5rem]" src="./images/logo.png" alt="">
+                    <div class="flex gap-10">
+                        <a class="Subtitle1Book" href="#">Products</a>
+                        <a class="Subtitle1Book" href="#">Learning</a>
+                        <a class="Subtitle1Book" href="#">Blog</a>
+                        <a class="Subtitle1Book" href="#">Our Team</a>
+                        <a class="Subtitle1Book" href="#">Services</a>
+                        <a class="Subtitle1Book" href="#">Contact Us</a>
+                    </div>
+                    <div class="flex gap-2 justify-center items-center">
+                        <button class="bg-PrimaryMain Subtitle2Medium text-white px-4 py-2 rounded-md  w-full xl:w-auto">Sign In</button>
+                        <button class="bg-white Subtitle2Medium text-PrimaryMain px-4 py-2 rounded-md border-[1px] border-PrimaryMain text-nowrap">Join In</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mr-auto">
+                <div x-data="{ open: false }">
+                    <button @click="open = ! open" class=" lg:hidden">
+                        <img class="w-10 h-10" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%2018L20%2018'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'/%3e%3cpath%20d='M4%2012L20%2012'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'/%3e%3cpath%20d='M4%206L20%206'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="img">
+                    </button>
+                    <div  x-show="open" class="flex flex-col p-2 bg-TertiaryTint2 rounded-md mx-2">
+                        <a class="Subtitle1Book p-2" href="#">Products</a>
+                        <a class="Subtitle1Book p-2" href="#">Learning</a>
+                        <a class="Subtitle1Book p-2" href="#">Blog</a>
+                        <a class="Subtitle1Book p-2" href="#">Our Team</a>
+                        <a class="Subtitle1Book p-2" href="#">Services</a>
+                        <a class="Subtitle1Book p-2" href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="mx-auto py-8 md:py-4 lg:pt-8 lg:pb-20 lg:px-20 container overflow-hidden">
+        <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300" class="flex justify-center items-center flex-col mb-11 px-8">
+            <h1 class="H1 text-center text-PrimaryMain">How Abdex Works</h1>
+            <h6 class="H6 text-center text-GrayShade3 mt-2">Achieve Your Goal in Only Four Straightforward Steps</h6>
+        </div>
+
+        <div class="w-full h-full text-center rounded-none lg:rounded-lg overflow-hidden relative mb-8 md:mb-4 lg:mb-20">
+            <div id="loading-container" class="text-center">Loading... 0%</div> 
+            <canvas id="three-canvas" class="xl:rounded-lg mx-auto"></canvas>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-6 justify-center flex-wrap lg:flex-nowrap px-8">
+            <div data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300" class="flex justify-center items-center flex-col gap-2 my-shadow-hover p-4 rounded-2xl ">
+                <div class="mb-2 relative px-6 py-6">
+                    <div class="absolute bg-PrimaryTint1 rounded-full blur-md px-6 py-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <h4 class="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-PrimaryMain text-center  H4Medium">1</h4>
+                </div>
+                <h5 class="text-GrayShade3 H5Medium">Pick</h5>
+                <p class="text-GrayShade2  Subtitle1Book w-full md:w-72 text-center">Scroll the market and choose your favorites.</p>
+            </div>
+            <div  data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300" class="flex justify-center items-center flex-col gap-2  my-shadow-hover p-4 rounded-2xl">
+                <div class="mb-2 relative px-6 py-6">
+                    <div class="absolute bg-PrimaryTint1 rounded-full blur-md px-6 py-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <h4 class="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-PrimaryMain text-center  H4Medium">2</h4>
+                </div>
+                <h5 class="text-GrayShade3  H5Medium">View</h5>
+                <p class="text-GrayShade2 text-xs md:text-sm Subtitle1Book w-full md:w-72 text-center">Use the camera or AR glass to see the favorites on your device.</p>
+            </div>
+            <div  data-aos="fade-left" data-aos-duration="1500" data-aos-offset="300" class="flex justify-center items-center flex-col gap-2  my-shadow-hover p-4 rounded-2xl">
+                <div class="mb-2 relative px-6 py-6">
+                    <div class="absolute bg-PrimaryTint1 rounded-full blur-md px-6 py-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <h4 class="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-PrimaryMain text-center  H4Medium">3</h4>
+                </div>
+                <h5 class="text-GrayShade3  H5Medium">Decorate</h5>
+                <p class="text-GrayShade2 text-xs md:text-sm Subtitle1Book w-full md:w-72 text-center">Continue the previous steps to complete your design</p>
+            </div>
+            <div  data-aos="fade-left" data-aos-duration="1500" data-aos-offset="300" class="flex justify-center items-center flex-col gap-2  my-shadow-hover p-4 rounded-2xl">
+                <div class="mb-2 relative px-6 py-6">
+                    <div class="absolute bg-PrimaryTint1 rounded-full blur-md px-6 py-6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <h4 class="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-PrimaryMain text-center  H4Medium">4</h4>
+                </div>
+                <h5 class="text-GrayShade3  H5Medium">Render</h5>
+                <p class="text-GrayShade2 text-xs md:text-sm Subtitle1Book w-full md:w-72 text-center">Render and share your dream house with virtual favorite elements</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container mx-auto py-8 md:py-4 lg:py-20 lg:px-20 px-8 overflow-hidden">
+        <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300" class="flex justify-center items-center flex-col mb-14">
+            <h1 class="H1 text-center text-PrimaryMain">Elements</h1>
+            <h6 class="H6 text-center text-GrayShade3">Make Your Dream House, with a Wide Range of Goods</h6>
+        </div>
+        <div class="flex justify-center items-center ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-2 w-full">
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg hover:bg-PrimaryMain" src="/images/image27.jpg" alt="img">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Rug</p>
+                </div>
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" data-aos-duration="1500"  class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg" src="/images/image28.jpg" alt="img">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1 absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Furniture</p>
+                </div>
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg" src="/images/image29.jpg" alt="img">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1 absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Curtains</p>
+                </div>
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg" src="/images/image30.jpg" alt="">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1 absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Wallpaper</p>
+                </div>
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg" src="/images/image31.jpg" alt="">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1 absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Floor</p>
+                </div>
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="relative">
+                    <img class="object-cover h-52 w-full lg:w-auto lg:h-80 rounded-lg" src="/images/image32.jpg" alt="">
+                    <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                    <p class="text-PrimaryTint1 absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">Lightnings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="flex flex-col gap-10 lg:gap-44 lg:px-20 px-4">
+    </div> -->
+
+    <!-- <div class="flex flex-col gap-10 lg:gap-44 lg:mt-44 mt-10 "></div> -->
+
+    <section x-data="{ selectedButton: 1 }" class="lg:px-20 px-8 container mx-auto overflow-hidden py-8 md:py-4 lg:py-20">
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-4 lg:gap-22">
+            <div  class="w-full flex flex-col justify-between">
+                <div data-aos="fade-up" data-aos-duration="2500" class="flex flex-col items-center lg:items-start mb-6 lg:mb-11">
+                    <h1 class="H1 text-center lg:text-left text-PrimaryMain font-bold">Features</h1>
+                    <h6 class="H6 text-center lg:text-left">Create Your Ideal Home with a Variety of Features</h6>
+                </div>
+                <div data-aos="fade-right" data-aos-duration="2500" data-aos-offset="300" class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-auto lg:px-14">
+                    <button
+                        x-on:click="selectedButton = 1"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 1, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Decorate with AI</button>
+                    <button
+                        x-on:click="selectedButton = 2"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 2, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Render elements By AR</button>
+                    <button
+                        x-on:click="selectedButton = 3"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 3, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Edit the materials</button>
+                    <button
+                        x-on:click="selectedButton = 4"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 4, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Edit the lightings</button>
+                    <button
+                        x-on:click="selectedButton = 5"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 5, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Interior Finishes</button>
+                    <button
+                        x-on:click="selectedButton = 6"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 6, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Web and application based</button>
+                    <button
+                        x-on:click="selectedButton = 7"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 7, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >3D Mode</button>
+                    <button
+                        x-on:click="selectedButton = 8"
+                        :class="{ 'bg-orange-500 text-white': selectedButton === 8, 'my-shadow-hover h-10 lg:h-12 rounded-lg transition duration-700 my-shadow GrayShade3 text-Subtitle1Medium px-4 lg:px-6': true }"
+                    >Easy User Interface</button>
+                    
+                </div>
+            </div>
+            <div class="flex justify-center items-center w-1/2">
+                <img :src="selectedButton === 1 ? './images/features1.png' : ''" :class="{ hidden: selectedButton !== 1, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 2 ? './images/features2.png' : ''" :class="{ hidden: selectedButton !== 2, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 3 ? './images/features3.png' : ''" :class="{ hidden: selectedButton !== 3, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 4 ? './images/features4.png' : ''" :class="{ hidden: selectedButton !== 4, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 5 ? './images/features5.png' : ''" :class="{ hidden: selectedButton !== 5, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 6 ? './images/features6.png' : ''" :class="{ hidden: selectedButton !== 6, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 7 ? './images/features7.png' : ''" :class="{ hidden: selectedButton !== 7, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+                <img :src="selectedButton === 8 ? './images/features8.png' : ''" :class="{ hidden: selectedButton !== 8, 'h-auto animate__animated animate__backInRight md:h-auto w-full md:object-fill': true }" alt="image">
+            </div>
+        </div>
+        
+
+    </section>
+
+    <section class="bg-SecondaryTint1 overflow-hidden py-8 md:py-4 lg:py-20">
+        <div class="lg:px-20 px-8 container mx-auto">
+            <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300"  class="flex flex-col items-center mb-8 md:mb-14 ">
+                <h1 class="H1 text-PrimaryMain font-bold">WHAT OTHERS MADE?</h1>
+                <h6 class="H6 text-center mt-2">If You’re on the Lookout for Home Interior Designs, Look No Further than<br class="hidden md:block"> Abdex for End-to-End Interior Design Services.</h6>
+            </div>
+            <div class="flex flex-col md:flex-row gap-2 lg:gap-4  ">
+                <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="grid grid-cols-1 md:grid-cols-2 lg:gap-4 gap-2 w-full">
+                    <img  class="h-44  rounded-lg w-full object-cover" src="/images/image1.png" alt="img">
+                    <img  class="h-44  rounded-lg w-full object-cover" src="/images/image2.png" alt="img">
+                    <img  class="h-44  rounded-lg w-full object-cover" src="/images/image3.png" alt="img">
+                    <img  class="h-44  rounded-lg w-full object-cover" src="/images/image4.png" alt="img">
+                </div>
+                <div class=" w-full">
+                    <img data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="w-full h-full rounded-lg" src="/images/image5.png" alt="img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container lg:px-20 px-8 mx-auto overflow-hidden py-8 md:py-4 lg:py-20">
+        <div class="flex gap-16 justify-center items-center ">
+            <div class=" w-full">
+                <h1 data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300"  class="H1 text-PrimaryMain mb-14 text-start">Why Abdex?</h1>
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300"  class="flex flex-col gap-8">
+                    <div class="my-shadow px-6 py-4 rounded-lg flex items-center gap-4 my-shadow-hover">
+                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/unlimited'%3e%3cg%20id='unlimited'%3e%3cpath%20id='Vector'%20d='M17.4503%2017.2999C15.7703%2017.2999%2014.2202%2016.5099%2013.2102%2015.1199C12.9702%2014.7899%2013.0402%2014.3199%2013.3702%2014.0699C13.7002%2013.8199%2014.1703%2013.8999%2014.4203%2014.2299C15.1503%2015.2199%2016.2503%2015.7899%2017.4503%2015.7899C19.5403%2015.7899%2021.2502%2014.0899%2021.2502%2011.9899C21.2502%209.88993%2019.5503%208.18994%2017.4503%208.18994C16.0303%208.18994%2014.6902%208.94991%2013.9602%2010.1599L11.3102%2014.5699C10.3102%2016.2399%208.48025%2017.27%206.54025%2017.27C3.62025%2017.27%201.24023%2014.8899%201.24023%2011.9699C1.24023%209.04991%203.62025%206.66992%206.54025%206.66992C8.22025%206.66992%209.77024%207.45991%2010.7802%208.84991C11.0202%209.17991%2010.9502%209.64996%2010.6202%209.89996C10.2802%2010.14%209.82025%2010.0699%209.57025%209.73993C8.84025%208.74993%207.74025%208.17993%206.54025%208.17993C4.45025%208.17993%202.74023%209.87992%202.74023%2011.9799C2.74023%2014.0799%204.44025%2015.78%206.54025%2015.78C7.96025%2015.78%209.30024%2015.0199%2010.0302%2013.8099L12.6802%209.39996C13.6802%207.72996%2015.5103%206.69995%2017.4503%206.69995C20.3703%206.69995%2022.7502%209.07994%2022.7502%2011.9999C22.7502%2014.9199%2020.3703%2017.2999%2017.4503%2017.2999Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <p class="GrayShade3 Subtitle1Book ">View the Ultimate Outcome Prior to Its Purchase</p>
+                    </div>
+                    <div class="my-shadow px-6 py-4 rounded-lg flex items-center gap-4 my-shadow-hover">
+                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/home-2'%3e%3cg%20id='home-2'%3e%3cpath%20id='Vector'%20d='M17.79%2022.75H6.21C3.47%2022.75%201.25%2020.52%201.25%2017.78V10.37C1.25%209.00997%202.09%207.29997%203.17%206.45997L8.56%202.25997C10.18%200.999974%2012.77%200.939974%2014.45%202.11997L20.63%206.44997C21.82%207.27997%2022.75%209.05997%2022.75%2010.51V17.79C22.75%2020.52%2020.53%2022.75%2017.79%2022.75ZM9.48%203.43997L4.09%207.63997C3.38%208.19997%202.75%209.46997%202.75%2010.37V17.78C2.75%2019.69%204.3%2021.25%206.21%2021.25H17.79C19.7%2021.25%2021.25%2019.7%2021.25%2017.79V10.51C21.25%209.54997%2020.56%208.21997%2019.77%207.67997L13.59%203.34997C12.45%202.54997%2010.57%202.58997%209.48%203.43997Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M12%2018.75C11.59%2018.75%2011.25%2018.41%2011.25%2018V15C11.25%2014.59%2011.59%2014.25%2012%2014.25C12.41%2014.25%2012.75%2014.59%2012.75%2015V18C12.75%2018.41%2012.41%2018.75%2012%2018.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <p class="GrayShade3 Subtitle1Book ">Choosing Several Pieces from a Varied and Current Collection</p>
+                    </div>
+                    <div class="my-shadow px-6 py-4 rounded-lg flex items-center gap-4 my-shadow-hover">
+                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/flash'%3e%3cg%20id='flash'%3e%3cpath%20id='Vector'%20d='M9.99%2022.7501C9.79%2022.7501%209.63%2022.7101%209.51%2022.6601C9.11%2022.5101%208.43%2022.0201%208.43%2020.4701V14.0201H6.09C4.75%2014.0201%204.27%2013.3901%204.1%2013.0201C3.93%2012.6401%203.78%2011.8701%204.66%2010.8601L12.23%202.26013C13.25%201.10013%2014.08%201.18013%2014.48%201.33013C14.88%201.48013%2015.56%201.97013%2015.56%203.52013V9.97013H17.9C19.24%209.97013%2019.72%2010.6001%2019.89%2010.9701C20.06%2011.3501%2020.21%2012.1201%2019.33%2013.1301L11.76%2021.7301C11.05%2022.5401%2010.43%2022.7501%209.99%2022.7501ZM13.93%202.74013C13.9%202.78013%2013.69%202.88013%2013.36%203.26013L5.79%2011.8601C5.51%2012.1801%205.47%2012.3801%205.47%2012.4201C5.49%2012.4301%205.67%2012.5301%206.09%2012.5301H9.18C9.59%2012.5301%209.93%2012.8701%209.93%2013.2801V20.4801C9.93%2020.9801%2010.02%2021.2001%2010.06%2021.2601C10.09%2021.2201%2010.3%2021.1201%2010.63%2020.7401L18.2%2012.1401C18.48%2011.8201%2018.52%2011.6201%2018.52%2011.5801C18.5%2011.5701%2018.32%2011.4701%2017.9%2011.4701H14.81C14.4%2011.4701%2014.06%2011.1301%2014.06%2010.7201V3.52013C14.07%203.02013%2013.97%202.81013%2013.93%202.74013Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <p class="GrayShade3 Subtitle1Book ">Render and Share 3D Video and Images</p>
+                    </div>
+                    <div class="my-shadow px-6 py-4 rounded-lg flex items-center gap-4 my-shadow-hover">
+                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/cup'%3e%3cg%20id='cup'%3e%3cpath%20id='Vector'%20d='M12.15%2019.35C11.74%2019.35%2011.4%2019.01%2011.4%2018.6V16.5C11.4%2016.09%2011.74%2015.75%2012.15%2015.75C12.56%2015.75%2012.9%2016.09%2012.9%2016.5V18.6C12.9%2019.01%2012.56%2019.35%2012.15%2019.35Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M17.9%2022.75H6.4V21C6.4%2019.48%207.63%2018.25%209.15%2018.25H15.15C16.67%2018.25%2017.9%2019.48%2017.9%2021V22.75ZM7.9%2021.25H16.4V21C16.4%2020.31%2015.84%2019.75%2015.15%2019.75H9.15C8.46%2019.75%207.9%2020.31%207.9%2021V21.25Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_3'%20d='M18.15%2022.75H6.15C5.74%2022.75%205.4%2022.41%205.4%2022C5.4%2021.59%205.74%2021.25%206.15%2021.25H18.15C18.56%2021.25%2018.9%2021.59%2018.9%2022C18.9%2022.41%2018.56%2022.75%2018.15%2022.75Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_4'%20d='M18.43%2012.4401C18.22%2012.4401%2018.01%2012.3501%2017.86%2012.1801C17.67%2011.9601%2017.62%2011.6501%2017.74%2011.3901C18.08%2010.6101%2018.25%209.78006%2018.25%208.91006V5.91006C18.25%205.56006%2018.19%205.22006%2018.07%204.86006C18.06%204.83006%2018.05%204.79006%2018.04%204.75006C18.01%204.60006%2018%204.45006%2018%204.31006C18%203.90006%2018.34%203.56006%2018.75%203.56006H19.35C21.14%203.56006%2022.6%205.06006%2022.6%206.91006C22.6%208.44006%2021.97%209.95006%2020.88%2011.0401C20.86%2011.0601%2020.8%2011.1101%2020.79%2011.1201C20.2%2011.6101%2019.53%2012.1601%2018.63%2012.4101C18.56%2012.4301%2018.5%2012.4401%2018.43%2012.4401ZM19.68%205.09006C19.73%205.36006%2019.75%205.64006%2019.75%205.91006V8.91006C19.75%209.32006%2019.72%209.71006%2019.66%2010.1101C19.72%2010.0601%2019.77%2010.0201%2019.83%209.97006C20.63%209.17006%2021.1%208.05006%2021.1%206.91006C21.1%206.01006%2020.49%205.25006%2019.68%205.09006Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_5'%20d='M5.58%2012.4001C5.5%2012.4001%205.43%2012.3901%205.35%2012.3601C4.53%2012.1001%203.76%2011.6201%203.12%2010.9801C1.97%209.7101%201.4%208.3201%201.4%206.8501C1.4%205.0301%202.83%203.6001%204.65%203.6001H5.3C5.55%203.6001%205.79%203.7301%205.93%203.9401C6.07%204.1501%206.09%204.4201%205.99%204.6501C5.83%205.0101%205.75%205.4201%205.75%205.8501V8.8501C5.75%209.7101%205.92%2010.5501%206.27%2011.3501C6.39%2011.6201%206.33%2011.9301%206.14%2012.1501C5.99%2012.3101%205.79%2012.4001%205.58%2012.4001ZM4.3%205.1301C3.49%205.2901%202.9%205.9901%202.9%206.8501C2.9%207.9401%203.34%208.9901%204.21%209.9501C4.25%2010.0001%204.3%2010.0401%204.35%2010.0801C4.28%209.6701%204.25%209.2601%204.25%208.8501V5.8501C4.25%205.6101%204.27%205.3701%204.3%205.1301Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_6'%20d='M12%2016.75C7.73%2016.75%204.25%2013.27%204.25%209V6C4.25%203.38%206.38%201.25%209%201.25H15C17.62%201.25%2019.75%203.38%2019.75%206V9C19.75%2013.27%2016.27%2016.75%2012%2016.75ZM9%202.75C7.21%202.75%205.75%204.21%205.75%206V9C5.75%2012.45%208.55%2015.25%2012%2015.25C15.45%2015.25%2018.25%2012.45%2018.25%209V6C18.25%204.21%2016.79%202.75%2015%202.75H9Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                        <p class="GrayShade3 Subtitle1Book ">Compatible with Various Devices</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:block w-full">
+                <div class="grid grid-cols-12 gap-4 w-full">
+                    <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="w-full mt-auto col-span-6">
+                        <img class="w-full h-[32rem] rounded-lg" src="/images/image6.png" alt="img">
+                    </div>
+                    <img data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="w-full rounded-lg h-[40rem] col-span-6" src="/images/image7.png" alt="img">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-SecondaryTint1 overflow-hidden py-8 md:py-4 lg:py-20">
+        <div class="grid lg:gap-6 gap-2 grid-cols-12 container lg:px-20 px-8 mx-auto">
+            <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="200"  class="sm:col-span-4 col-span-12 md:col-span-7 sm:text-start text-center lg:col-span-4">
+                <div class="flex justify-center items-start flex-col mb-11">
+                    <h1 class="H1 text-PrimaryMain ">Abdex for everyone</h1>
+                    <h6 class="H6 ">This Platform is for Anyone who Loves Dream House and Creating it</h6>
+                </div>
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="200" class="relative md:col-span-5 lg:col-span-4 col-span-12">
+                <img class="w-full h-52 xl:h-[16rem] lg:h-full rounded-lg" src="/images/image9.jpg" alt="img">
+                <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">For Interior Designer</p>
+
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="200" class="relative col-span-12 md:col-span-6 lg:col-span-4">
+                <img class="w-full h-52 xl:h-[16rem] lg:h-full rounded-lg" src="/images/image8.png" alt="">
+                <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">For Realtors</p>
+
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="200" class="relative col-span-12 md:col-span-6 lg:col-span-3">
+                <img class="w-full h-52 lg:h-[16rem] rounded-lg" src="/images/image10.png" alt="">
+                <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">For Homeowner</p>
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="200" class="relative col-span-12 md:col-span-6 lg:col-span-3">
+                <img class="w-full h-52 lg:h-[16rem] rounded-lg" src="/images/image11.png" alt="">
+                <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">For Schools</p>
+
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="200" class="relative col-span-12 md:col-span-6 lg:col-span-6">
+                <img class="w-full h-52 lg:h-[16rem] rounded-lg" src="/images/image12.png" alt="">
+                <div class="absolute w-full h-full my-opacity top-0 right-0 rounded-lg"></div>
+                <p class="text-PrimaryTint1  absolute bottom-3 right-0 lg:py-2 py-1 px-8 text-center border-t-[1px] border-b-[1px] border-l-[1px] border-PrimaryTint1 H6Medium bgblur bgblur-hover" style="border-radius: 6px 0px 0px 6px">For Brands & Retailer</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container lg:px-20 px-8 mx-auto overflow-hidden py-8 md:py-4 lg:py-20">
+        <div x-data="{ selectedImage: 0 }" >
+            <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300"  class="flex justify-center items-center flex-col mb-10 sm:text-start text-center ">
+                <h1 class="H1 text-PrimaryMain">YOUR AMAZING WORKS</h1>
+                <h6 class="H6">Render and decorate your dream house with our platform then share and inspire others.</h6>
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="grid grid-cols-12 lg:gap-6 gap-2 py-2 sm:py-2 ">
+                <img
+                    x-bind:class="{ 'col-span-4': selectedImage === 0, 'lg:col-span-2 col-span-2': selectedImage !== 0, 'transition duration-1000 transform hover:scale-105 object-fill h-52 w-full md:h-[30rem] rounded-lg': true }"
+                    x-on:mouseover="selectedImage = 0"
+                    x-on:mouseout="selectedImage = 0"
+                    :src="'./images/image13.png'"
+                    alt="img"
+                >
+            
+                <img
+                    x-bind:class="{ 'col-span-4': selectedImage === 1, 'lg:col-span-2 col-span-2': selectedImage !== 1, 'transition duration-1000 transform hover:scale-105 object-fill h-52 w-full md:h-[30rem] rounded-lg': true }"
+                    x-on:mouseover="selectedImage = 1"
+                    x-on:mouseout="selectedImage = 1"
+                    :src="'./images/image14.png'"
+                    alt="img"
+                >
+                <img
+                    x-bind:class="{ 'col-span-4': selectedImage === 2, 'lg:col-span-2 col-span-2': selectedImage !== 2, 'transition duration-1000 transform hover:scale-105 object-fill h-52 w-full md:h-[30rem] rounded-lg': true }"
+                    x-on:mouseover="selectedImage = 2"
+                    x-on:mouseout="selectedImage = 2"
+                    :src="'./images/image15.png'"
+                    alt="img"
+                >
+                <img
+                    x-bind:class="{ 'col-span-4': selectedImage === 3, 'lg:col-span-2 col-span-2': selectedImage !== 3, 'transition duration-1000 transform hover:scale-105 object-fill h-52 w-full md:h-[30rem] rounded-lg': true }"
+                    x-on:mouseover="selectedImage = 3"
+                    x-on:mouseout="selectedImage = 3"
+                    :src="'./images/image16.png'"
+                    alt="img"
+                >
+                <img
+                    x-bind:class="{ 'col-span-4': selectedImage === 4, 'lg:col-span-2 col-span-2': selectedImage !== 4, 'transition duration-1000 hover:scale-105 object-fill h-52 w-full md:h-[30rem] rounded-lg': true }"
+                    x-on:mouseover="selectedImage = 4"
+                    x-on:mouseout="selectedImage = 4"
+                    :src="'./images/image17.png'"
+                    alt="img"
+                >
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <section class="bg-GrayTint1  overflow-hidden py-8 md:py-4 lg:py-20">
+        <div class="flex gap-6 flex-wrap lg:flex-nowrap container lg:px-20 px-8 mx-auto">
+            <div class="flex justify-center items-start flex-col mb-11 sm:text-start text-center">
+                <h1 data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300"  class="H1 text-PrimaryMain mx-auto sm:mx-0">Video Tutorial</h1>
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300" >
+                    <h6 class="H6 mb-10">On the Abdex platform, you may learn the fundamentals of interior decorating design and other relevant topics. The courses that will take you up from scratch.</h6>
+                    <div class="flex justify-between w-full mb-20">
+                        <p class="bg-white rounded-3xl p-2 text-GrayShade3 px-6">#Beginner</p>
+                        <p class="bg-white rounded-3xl p-2 text-GrayShade3 px-6">#Intermediate</p>
+                        <p class="bg-white rounded-3xl p-2 text-GrayShade3 px-6">#Advanced</p>
+                    </div>
+                    <button class="flex items-center gap-3">
+                        <p class="Subtitle1Medium text-PrimaryMain">See More</p>
+                        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/arrow-right'%3e%3cg%20id='arrow-right'%3e%3cpath%20id='Vector'%20d='M14.43%2018.8201C14.24%2018.8201%2014.05%2018.7501%2013.9%2018.6001C13.61%2018.3101%2013.61%2017.8301%2013.9%2017.5401L19.44%2012.0001L13.9%206.46012C13.61%206.17012%2013.61%205.69012%2013.9%205.40012C14.19%205.11012%2014.67%205.11012%2014.96%205.40012L21.03%2011.4701C21.32%2011.7601%2021.32%2012.2401%2021.03%2012.5301L14.96%2018.6001C14.81%2018.7501%2014.62%2018.8201%2014.43%2018.8201Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M20.33%2012.75H3.5C3.09%2012.75%202.75%2012.41%202.75%2012C2.75%2011.59%203.09%2011.25%203.5%2011.25H20.33C20.74%2011.25%2021.08%2011.59%2021.08%2012C21.08%2012.41%2020.74%2012.75%2020.33%2012.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                    </button>
+                </div>
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500" data-aos-offset="300" class="flex justify-center items-center w-full">
+                <img class="md:h-[21rem] h-52 object-cover rounded-lg w-full" src="/images/image18.png" alt="img">
+            </div>
+        </div>
+    </section>
+            
+    <section class="container lg:px-20 px-8 mx-auto overflow-hidden py-8 md:py-4 lg:py-20">
+        <div data-aos="fade-up" data-aos-duration="2500" data-aos-offset="300"  class="flex justify-center items-center flex-col mb-14 text-center  lg:p-0">
+            <h1 class="H1 text-PrimaryMain ">Articles</h1>
+            <h6 class="H6 ">You Can Access and Read the Latest Interior Design and Decorating Articles Here</h6>
+        </div>
+        <div class="grid gap-6 grid-cols-12 mb-14">
+            <div data-aos="fade-right" data-aos-duration="1500" data-aos-offset="300" class="p-4 my-shadow col-span-12 xl:col-span-6 rounded-lg">
+                <img class="w-full lg:h-[25rem] h-52 rounded-lg object-cover" src="/images/image19.png" alt="img">
+                <p class="H6Medium text-GrayShade3 mt-4">Designs and Ideas to Make Your Home Office More Eco-conscious</p>
+                <p class="Subtitle1Book text-GrayShade2">Do you work from home? Would you prefer your employer to be environmentally conscious? If you answered yes, it's time to redecorate your house and make a few changes.</p>
+                <div class="mt-7">
+                    <div class="flex justify-between items-cenassetster">
+                        <div class="flex items-center">
+                            <img class="mr-2 w-10 h-10" src="data:image/png;base64,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" alt="img">
+                            <div>
+                                <p class="Subtitle2Medium text-GrayShade2">Marley Vaccaro</p>
+                                <p class="text-GrayShade1 Subtitle2">2 days ago</p>
+                            </div>
+                        </div>
+                        <button class="flex items-center gap-3">
+                            <p class="Subtitle2Medium text-PrimaryMain">Read More</p>
+                            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/arrow-right'%3e%3cg%20id='arrow-right'%3e%3cpath%20id='Vector'%20d='M14.43%2018.8201C14.24%2018.8201%2014.05%2018.7501%2013.9%2018.6001C13.61%2018.3101%2013.61%2017.8301%2013.9%2017.5401L19.44%2012.0001L13.9%206.46012C13.61%206.17012%2013.61%205.69012%2013.9%205.40012C14.19%205.11012%2014.67%205.11012%2014.96%205.40012L21.03%2011.4701C21.32%2011.7601%2021.32%2012.2401%2021.03%2012.5301L14.96%2018.6001C14.81%2018.7501%2014.62%2018.8201%2014.43%2018.8201Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M20.33%2012.75H3.5C3.09%2012.75%202.75%2012.41%202.75%2012C2.75%2011.59%203.09%2011.25%203.5%2011.25H20.33C20.74%2011.25%2021.08%2011.59%2021.08%2012C21.08%2012.41%2020.74%2012.75%2020.33%2012.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                        </button>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1500" data-aos-offset="300" class=" col-span-12 xl:col-span-6 flex flex-col gap-4">
+                <div   class="my-shadow p-4 rounded-lg flex xl:flex-nowrap flex-wrap gap-4">
+                    <img class="xl:h-[10.5rem] lg:h-[25rem] h-52 rounded-md object-cover xl:w-auto w-full" src="/images/image20.png" alt="">
+                    <div>
+                        <h6 class="mb-2 H6Medium text-GrayShade3">Top Design Trends of 2024</h6>
+                        <p class="Subtitle1Book text-GrayShade2 mb-4">"If the last few years were defined by sweet pinks and brass fixtures," trend experts predict that "2024 will shift ...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img class="mr-2 w-10 h-10" src="/images/image22.jpg" alt="img">
+                                <div>
+                                    <p class="Subtitle2Medium text-GrayShade2">Jakob Westervelt</p>
+                                    <p class="text-GrayShade1 Subtitle2">7 days ago</p>
+                                </div>
+                            </div>
+                            <button class="flex items-center gap-3">
+                                <p class="Subtitle2Medium text-PrimaryMain">Read More</p>
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/arrow-right'%3e%3cg%20id='arrow-right'%3e%3cpath%20id='Vector'%20d='M14.43%2018.8201C14.24%2018.8201%2014.05%2018.7501%2013.9%2018.6001C13.61%2018.3101%2013.61%2017.8301%2013.9%2017.5401L19.44%2012.0001L13.9%206.46012C13.61%206.17012%2013.61%205.69012%2013.9%205.40012C14.19%205.11012%2014.67%205.11012%2014.96%205.40012L21.03%2011.4701C21.32%2011.7601%2021.32%2012.2401%2021.03%2012.5301L14.96%2018.6001C14.81%2018.7501%2014.62%2018.8201%2014.43%2018.8201Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M20.33%2012.75H3.5C3.09%2012.75%202.75%2012.41%202.75%2012C2.75%2011.59%203.09%2011.25%203.5%2011.25H20.33C20.74%2011.25%2021.08%2011.59%2021.08%2012C21.08%2012.41%2020.74%2012.75%2020.33%2012.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-shadow p-4 rounded-lg flex xl:flex-nowrap flex-wrap gap-4">
+                    <img class="xl:h-[10.5rem] lg:h-[25rem] h-52 rounded-md object-cover  xl:w-auto w-full" src="/images/image25.png" alt="">
+                    <div>
+                        <h6 class="mb-2 H6Medium text-GrayShade3">How to Render Videos？</h6>
+                        <p class="Subtitle1Book text-GrayShade2 mb-4">This is a tutorial about the video rendering function. The article is mainly divided into two parts which will help you master ...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img class="mr-2 w-10 h-10" src="data:image/png;base64,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" alt="img">
+                                <div>
+                                    <p class="Subtitle2Medium text-GrayShade2">Tatiana Levin</p>
+                                    <p class="text-GrayShade1 Subtitle2">14 days ago</p>
+                                </div>
+                            </div>
+                            <button class="flex items-center gap-3">
+                                <p class="Subtitle2Medium text-PrimaryMain">Read More</p>
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/arrow-right'%3e%3cg%20id='arrow-right'%3e%3cpath%20id='Vector'%20d='M14.43%2018.8201C14.24%2018.8201%2014.05%2018.7501%2013.9%2018.6001C13.61%2018.3101%2013.61%2017.8301%2013.9%2017.5401L19.44%2012.0001L13.9%206.46012C13.61%206.17012%2013.61%205.69012%2013.9%205.40012C14.19%205.11012%2014.67%205.11012%2014.96%205.40012L21.03%2011.4701C21.32%2011.7601%2021.32%2012.2401%2021.03%2012.5301L14.96%2018.6001C14.81%2018.7501%2014.62%2018.8201%2014.43%2018.8201Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M20.33%2012.75H3.5C3.09%2012.75%202.75%2012.41%202.75%2012C2.75%2011.59%203.09%2011.25%203.5%2011.25H20.33C20.74%2011.25%2021.08%2011.59%2021.08%2012C21.08%2012.41%2020.74%2012.75%2020.33%2012.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-shadow p-4 rounded-lg flex xl:flex-nowrap flex-wrap gap-4">
+                    <img class="xl:h-[10.5rem] lg:h-[25rem] h-52 rounded-md object-cover xl:w-auto w-full" src="/images/image26.png" alt="">
+                    <div>
+                        <h6 class="mb-2 H6Medium text-GrayShade3">Dream of a White Kitchen - 5 Reason Why</h6>
+                        <p class="Subtitle1Book text-GrayShade2 mb-4">According to the NKBA, (the National Kitchen + Bath Association) white is ...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img class="mr-2 w-10 h-10" src="data:image/png;base64,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" alt="img">
+                                <div>
+                                    <p class="Subtitle2Medium text-GrayShade2">Kierra Herwitz</p>
+                                    <p class="text-GrayShade1 Subtitle2">21 days ago</p>
+                                </div>
+                            </div>
+                            <button class="flex items-center gap-3">
+                                <p class="Subtitle2Medium text-PrimaryMain">Read More</p>
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/arrow-right'%3e%3cg%20id='arrow-right'%3e%3cpath%20id='Vector'%20d='M14.43%2018.8201C14.24%2018.8201%2014.05%2018.7501%2013.9%2018.6001C13.61%2018.3101%2013.61%2017.8301%2013.9%2017.5401L19.44%2012.0001L13.9%206.46012C13.61%206.17012%2013.61%205.69012%2013.9%205.40012C14.19%205.11012%2014.67%205.11012%2014.96%205.40012L21.03%2011.4701C21.32%2011.7601%2021.32%2012.2401%2021.03%2012.5301L14.96%2018.6001C14.81%2018.7501%2014.62%2018.8201%2014.43%2018.8201Z'%20fill='%23FB6535'/%3e%3cpath%20id='Vector_2'%20d='M20.33%2012.75H3.5C3.09%2012.75%202.75%2012.41%202.75%2012C2.75%2011.59%203.09%2011.25%203.5%2011.25H20.33C20.74%2011.25%2021.08%2011.59%2021.08%2012C21.08%2012.41%2020.74%2012.75%2020.33%2012.75Z'%20fill='%23FB6535'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center items-center">
+            <button  data-aos="zoom-in" data-aos-duration="1500" class="Subtitle1Medium text-white bg-PrimaryMain px-8 py-3 rounded-md">See All Articles</button>
+        </div>
+    </section> 
+    
+    <footer class="bg-GrayTint1 overflow-hidden pt-8 md:pt-4 lg:pt-20 pb-2 md:pb-6">
+        <div data-aos="fade-down" data-aos-duration="2500" data-aos-offset="100" class="sm:px-20 lg:px-20 px-8 container mx-auto">
+            <div class="grid grid-cols-10 gap-4 md:gap-10 lg:gap-4">
+                <div class="md:col-span-7 lg:col-span-4 col-span-10 flex flex-col justify-start text-center sm:text-start">
+                    <p class="H1 mb-4">Abdex</p>
+                    <p class="Subtitle1Book mb-4">Communicate with 20 million+ designers worldwide!</p>
+                    <div class="px-4 py-2 bg-white flex flex-col sm:flex-row justify-between rounded-md">
+                        <input class="sm:focus:outline-none px-2 py-2 mb-2 sm:mb-0 w-full border-2 sm:border-none" type="email">
+                        <button class="Subtitle1Medium text-white bg-PrimaryMain px-8 py-3 rounded-md">Subscribe</button>
+                    </div>
+                </div>
+                <div class="md:col-span-3 lg:col-span-2 col-span-10 text-center lg:text-start">
+                    <h6 class="h6 text-GrayShade3 mb-4">Quick Access</h6>
+                    <ul class="sm:pl-5 lg:list-disc list-none" style="list-style-position: outside">
+                        <li class="subtitle2 text-GrayShade3">Home Page</li>
+                        <li class="subtitle2 text-GrayShade3">Blog</li>
+                        <li class="subtitle2 text-GrayShade3">About</li>
+                        <li class="subtitle2 text-GrayShade3">Our</li>
+                        <li class="subtitle2 text-GrayShade3">Contact Us</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3 lg:col-span-2 col-span-10 text-center lg:text-start" >
+                    <h6 class="h6 text-GrayShade3 mb-4">Product & Services</h6>
+                    <ul class="sm:pl-5 lg:list-disc list-none" style=" list-style-position: outside ">
+                        <li class="subtitle2 text-GrayShade3">Rug</li>
+                        <li class="subtitle2 text-GrayShade3">Furniture</li>
+                        <li class="subtitle2 text-GrayShade3">Curtains</li>
+                        <li class="subtitle2 text-GrayShade3">Wallpaper</li>
+                        <li class="subtitle2 text-GrayShade3">Floor</li>
+                        <li class="subtitle2 text-GrayShade3">Lighting</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-7 lg:col-span-2 col-span-10 text-center lg:text-start">
+                    <h6 class="h6 text-GrayShade3 mb-4">Product & Services</h6>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center justify-center sm:justify-normal mr-2 flex-col lg:flex-row ">
+                            <img class="mb-2 lg:mb-0" src="data:image/svg+xml,%3csvg%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/location'%3e%3cg%20id='location'%3e%3cpath%20id='Vector'%20d='M8.49998%209.4463C7.07998%209.4463%205.91998%208.29297%205.91998%206.8663C5.91998%205.43964%207.07998%204.29297%208.49998%204.29297C9.91998%204.29297%2011.08%205.4463%2011.08%206.87297C11.08%208.29964%209.91998%209.4463%208.49998%209.4463ZM8.49998%205.29297C7.63332%205.29297%206.91998%205.99964%206.91998%206.87297C6.91998%207.7463%207.62665%208.45297%208.49998%208.45297C9.37332%208.45297%2010.08%207.7463%2010.08%206.87297C10.08%205.99964%209.36665%205.29297%208.49998%205.29297Z'%20fill='%23484747'/%3e%3cpath%20id='Vector_2'%20d='M8.5%2015.173C7.51333%2015.173%206.51999%2014.7997%205.74666%2014.0597C3.78%2012.1663%201.60666%209.14634%202.42666%205.55301C3.16666%202.29301%206.01333%200.833008%208.5%200.833008C8.5%200.833008%208.5%200.833008%208.50666%200.833008C10.9933%200.833008%2013.84%202.29301%2014.58%205.55967C15.3933%209.15301%2013.22%2012.1663%2011.2533%2014.0597C10.48%2014.7997%209.48666%2015.173%208.5%2015.173ZM8.5%201.83301C6.56%201.83301%204.06666%202.86634%203.40666%205.77301C2.68666%208.91301%204.66%2011.6197%206.44666%2013.333C7.6%2014.4463%209.40666%2014.4463%2010.56%2013.333C12.34%2011.6197%2014.3133%208.91301%2013.6067%205.77301C12.94%202.86634%2010.44%201.83301%208.5%201.83301Z'%20fill='%23484747'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="img">
+                            <p class="subtitle2 ml-2">No. 200, 7646 Yonge Street, Thornhill, Toronto, ON L4J 1V9, Canada</p>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-normal mr-2 flex-col lg:flex-row ">
+                            <img class="mb-2 lg:mb-0" src="data:image/svg+xml,%3csvg%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/call'%3e%3cg%20id='call'%3e%3cpath%20id='Vector'%20d='M12.1333%2015.1663C11.38%2015.1663%2010.5866%2014.9863%209.76665%2014.6397C8.96665%2014.2997%208.15998%2013.833%207.37331%2013.2663C6.59331%2012.693%205.83998%2012.053%205.12665%2011.353C4.41998%2010.6397%203.77998%209.88634%203.21331%209.11301C2.63998%208.31301%202.17998%207.51301%201.85331%206.73967C1.50665%205.91301%201.33331%205.11301%201.33331%204.35967C1.33331%203.83967%201.42665%203.34634%201.60665%202.88634C1.79331%202.41301%202.09331%201.97301%202.49998%201.59301C3.01331%201.08634%203.59998%200.833008%204.22665%200.833008C4.48665%200.833008%204.75331%200.893008%204.97998%200.999674C5.23998%201.11967%205.45998%201.29967%205.61998%201.53967L7.16665%203.71967C7.30665%203.91301%207.41331%204.09967%207.48665%204.28634C7.57331%204.48634%207.61998%204.68634%207.61998%204.87967C7.61998%205.13301%207.54665%205.37967%207.40665%205.61301C7.30665%205.79301%207.15331%205.98634%206.95998%206.17968L6.50665%206.65301C6.51331%206.67301%206.51998%206.68634%206.52665%206.69967C6.60665%206.83967%206.76665%207.07967%207.07331%207.43967C7.39998%207.81301%207.70665%208.15301%208.01331%208.46634C8.40665%208.85301%208.73331%209.15967%209.03998%209.41301C9.41998%209.73301%209.66665%209.89301%209.81331%209.96634L9.79998%209.99967L10.2866%209.51967C10.4933%209.31301%2010.6933%209.15967%2010.8866%209.05968C11.2533%208.83301%2011.72%208.79301%2012.1866%208.98634C12.36%209.05967%2012.5466%209.15967%2012.7466%209.29967L14.96%2010.873C15.2066%2011.0397%2015.3866%2011.253%2015.4933%2011.5063C15.5933%2011.7597%2015.64%2011.993%2015.64%2012.2263C15.64%2012.5463%2015.5666%2012.8663%2015.4266%2013.1663C15.2866%2013.4663%2015.1133%2013.7263%2014.8933%2013.9663C14.5133%2014.3863%2014.1%2014.6863%2013.62%2014.8797C13.16%2015.0663%2012.66%2015.1663%2012.1333%2015.1663ZM4.22665%201.83301C3.85998%201.83301%203.51998%201.99301%203.19331%202.31301C2.88665%202.59967%202.67331%202.91301%202.53998%203.25301C2.39998%203.59967%202.33331%203.96634%202.33331%204.35967C2.33331%204.97967%202.47998%205.65301%202.77331%206.34634C3.07331%207.05301%203.49331%207.78634%204.02665%208.51967C4.55998%209.25301%205.16665%209.96634%205.83331%2010.6397C6.49998%2011.2997%207.21998%2011.913%207.95998%2012.453C8.67998%2012.9797%209.41998%2013.4063%2010.1533%2013.713C11.2933%2014.1997%2012.36%2014.313%2013.24%2013.9463C13.58%2013.8063%2013.88%2013.593%2014.1533%2013.2863C14.3066%2013.1197%2014.4266%2012.9397%2014.5266%2012.7263C14.6066%2012.5597%2014.6466%2012.3863%2014.6466%2012.213C14.6466%2012.1063%2014.6266%2011.9997%2014.5733%2011.8797C14.5533%2011.8397%2014.5133%2011.7663%2014.3866%2011.6797L12.1733%2010.1063C12.04%2010.013%2011.92%209.94634%2011.8066%209.89968C11.66%209.83967%2011.6%209.77967%2011.3733%209.91967C11.24%209.98634%2011.12%2010.0863%2010.9866%2010.2197L10.48%2010.7197C10.22%2010.973%209.81998%2011.033%209.51331%2010.9197L9.33331%2010.8397C9.05998%2010.693%208.73998%2010.4663%208.38665%2010.1663C8.06665%209.89301%207.71998%209.57301%207.29998%209.15967C6.97331%208.82634%206.64665%208.47301%206.30665%208.07967C5.99331%207.71301%205.76665%207.39967%205.62665%207.13967L5.54665%206.93967C5.50665%206.78634%205.49331%206.69967%205.49331%206.60634C5.49331%206.36634%205.57998%206.15301%205.74665%205.98634L6.24665%205.46634C6.37998%205.33301%206.47998%205.20634%206.54665%205.09301C6.59998%205.00634%206.61998%204.93301%206.61998%204.86634C6.61998%204.81301%206.59998%204.73301%206.56665%204.65301C6.51998%204.54634%206.44665%204.42634%206.35331%204.29967L4.80665%202.11301C4.73998%202.01967%204.65998%201.95301%204.55998%201.90634C4.45331%201.85967%204.33998%201.83301%204.22665%201.83301ZM9.79998%2010.0063L9.69331%2010.4597L9.87331%209.99301C9.83998%209.98634%209.81331%209.99301%209.79998%2010.0063Z'%20fill='%23484747'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="img">
+                            <p class="subtitle2 ml-2">+1 (289) 269-3933</p>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-normal mr-2 flex-col lg:flex-row ">
+                            <img class="mb-2 lg:mb-0" src="data:image/svg+xml,%3csvg%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/location'%3e%3cg%20id='location'%3e%3cpath%20id='Vector'%20d='M8.49998%209.4463C7.07998%209.4463%205.91998%208.29297%205.91998%206.8663C5.91998%205.43964%207.07998%204.29297%208.49998%204.29297C9.91998%204.29297%2011.08%205.4463%2011.08%206.87297C11.08%208.29964%209.91998%209.4463%208.49998%209.4463ZM8.49998%205.29297C7.63332%205.29297%206.91998%205.99964%206.91998%206.87297C6.91998%207.7463%207.62665%208.45297%208.49998%208.45297C9.37332%208.45297%2010.08%207.7463%2010.08%206.87297C10.08%205.99964%209.36665%205.29297%208.49998%205.29297Z'%20fill='%23484747'/%3e%3cpath%20id='Vector_2'%20d='M8.5%2015.173C7.51333%2015.173%206.51999%2014.7997%205.74666%2014.0597C3.78%2012.1663%201.60666%209.14634%202.42666%205.55301C3.16666%202.29301%206.01333%200.833008%208.5%200.833008C8.5%200.833008%208.5%200.833008%208.50666%200.833008C10.9933%200.833008%2013.84%202.29301%2014.58%205.55967C15.3933%209.15301%2013.22%2012.1663%2011.2533%2014.0597C10.48%2014.7997%209.48666%2015.173%208.5%2015.173ZM8.5%201.83301C6.56%201.83301%204.06666%202.86634%203.40666%205.77301C2.68666%208.91301%204.66%2011.6197%206.44666%2013.333C7.6%2014.4463%209.40666%2014.4463%2010.56%2013.333C12.34%2011.6197%2014.3133%208.91301%2013.6067%205.77301C12.94%202.86634%2010.44%201.83301%208.5%201.83301Z'%20fill='%23484747'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="img">
+                            <p class="subtitle2 ml-2">Office 41, No. 27, Gholam Jafari Street, Tajrish Square, Tehran, Iran</p>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-normal mr-2 flex-col lg:flex-row ">
+                            <img class="mb-2 lg:mb-0" src="data:image/svg+xml,%3csvg%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/call'%3e%3cg%20id='call'%3e%3cpath%20id='Vector'%20d='M12.1333%2015.1663C11.38%2015.1663%2010.5866%2014.9863%209.76665%2014.6397C8.96665%2014.2997%208.15998%2013.833%207.37331%2013.2663C6.59331%2012.693%205.83998%2012.053%205.12665%2011.353C4.41998%2010.6397%203.77998%209.88634%203.21331%209.11301C2.63998%208.31301%202.17998%207.51301%201.85331%206.73967C1.50665%205.91301%201.33331%205.11301%201.33331%204.35967C1.33331%203.83967%201.42665%203.34634%201.60665%202.88634C1.79331%202.41301%202.09331%201.97301%202.49998%201.59301C3.01331%201.08634%203.59998%200.833008%204.22665%200.833008C4.48665%200.833008%204.75331%200.893008%204.97998%200.999674C5.23998%201.11967%205.45998%201.29967%205.61998%201.53967L7.16665%203.71967C7.30665%203.91301%207.41331%204.09967%207.48665%204.28634C7.57331%204.48634%207.61998%204.68634%207.61998%204.87967C7.61998%205.13301%207.54665%205.37967%207.40665%205.61301C7.30665%205.79301%207.15331%205.98634%206.95998%206.17968L6.50665%206.65301C6.51331%206.67301%206.51998%206.68634%206.52665%206.69967C6.60665%206.83967%206.76665%207.07967%207.07331%207.43967C7.39998%207.81301%207.70665%208.15301%208.01331%208.46634C8.40665%208.85301%208.73331%209.15967%209.03998%209.41301C9.41998%209.73301%209.66665%209.89301%209.81331%209.96634L9.79998%209.99967L10.2866%209.51967C10.4933%209.31301%2010.6933%209.15967%2010.8866%209.05968C11.2533%208.83301%2011.72%208.79301%2012.1866%208.98634C12.36%209.05967%2012.5466%209.15967%2012.7466%209.29967L14.96%2010.873C15.2066%2011.0397%2015.3866%2011.253%2015.4933%2011.5063C15.5933%2011.7597%2015.64%2011.993%2015.64%2012.2263C15.64%2012.5463%2015.5666%2012.8663%2015.4266%2013.1663C15.2866%2013.4663%2015.1133%2013.7263%2014.8933%2013.9663C14.5133%2014.3863%2014.1%2014.6863%2013.62%2014.8797C13.16%2015.0663%2012.66%2015.1663%2012.1333%2015.1663ZM4.22665%201.83301C3.85998%201.83301%203.51998%201.99301%203.19331%202.31301C2.88665%202.59967%202.67331%202.91301%202.53998%203.25301C2.39998%203.59967%202.33331%203.96634%202.33331%204.35967C2.33331%204.97967%202.47998%205.65301%202.77331%206.34634C3.07331%207.05301%203.49331%207.78634%204.02665%208.51967C4.55998%209.25301%205.16665%209.96634%205.83331%2010.6397C6.49998%2011.2997%207.21998%2011.913%207.95998%2012.453C8.67998%2012.9797%209.41998%2013.4063%2010.1533%2013.713C11.2933%2014.1997%2012.36%2014.313%2013.24%2013.9463C13.58%2013.8063%2013.88%2013.593%2014.1533%2013.2863C14.3066%2013.1197%2014.4266%2012.9397%2014.5266%2012.7263C14.6066%2012.5597%2014.6466%2012.3863%2014.6466%2012.213C14.6466%2012.1063%2014.6266%2011.9997%2014.5733%2011.8797C14.5533%2011.8397%2014.5133%2011.7663%2014.3866%2011.6797L12.1733%2010.1063C12.04%2010.013%2011.92%209.94634%2011.8066%209.89968C11.66%209.83967%2011.6%209.77967%2011.3733%209.91967C11.24%209.98634%2011.12%2010.0863%2010.9866%2010.2197L10.48%2010.7197C10.22%2010.973%209.81998%2011.033%209.51331%2010.9197L9.33331%2010.8397C9.05998%2010.693%208.73998%2010.4663%208.38665%2010.1663C8.06665%209.89301%207.71998%209.57301%207.29998%209.15967C6.97331%208.82634%206.64665%208.47301%206.30665%208.07967C5.99331%207.71301%205.76665%207.39967%205.62665%207.13967L5.54665%206.93967C5.50665%206.78634%205.49331%206.69967%205.49331%206.60634C5.49331%206.36634%205.57998%206.15301%205.74665%205.98634L6.24665%205.46634C6.37998%205.33301%206.47998%205.20634%206.54665%205.09301C6.59998%205.00634%206.61998%204.93301%206.61998%204.86634C6.61998%204.81301%206.59998%204.73301%206.56665%204.65301C6.51998%204.54634%206.44665%204.42634%206.35331%204.29967L4.80665%202.11301C4.73998%202.01967%204.65998%201.95301%204.55998%201.90634C4.45331%201.85967%204.33998%201.83301%204.22665%201.83301ZM9.79998%2010.0063L9.69331%2010.4597L9.87331%209.99301C9.83998%209.98634%209.81331%209.99301%209.79998%2010.0063Z'%20fill='%23484747'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="img">
+                            <p class="subtitle2 ml-2">+98 (912) 0539563</p>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-normal mr-2 flex-col lg:flex-row ">
+                            <img class="mb-2 lg:mb-0" src="data:image/svg+xml,%3csvg%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='vuesax/outline/sms'%3e%3cg%20id='sms'%3e%3cpath%20id='Vector'%20d='M11.8333%2014.1663H5.16665C2.73331%2014.1663%201.33331%2012.7663%201.33331%2010.333V5.66634C1.33331%203.23301%202.73331%201.83301%205.16665%201.83301H11.8333C14.2666%201.83301%2015.6666%203.23301%2015.6666%205.66634V10.333C15.6666%2012.7663%2014.2666%2014.1663%2011.8333%2014.1663ZM5.16665%202.83301C3.25998%202.83301%202.33331%203.75967%202.33331%205.66634V10.333C2.33331%2012.2397%203.25998%2013.1663%205.16665%2013.1663H11.8333C13.74%2013.1663%2014.6666%2012.2397%2014.6666%2010.333V5.66634C14.6666%203.75967%2013.74%202.83301%2011.8333%202.83301H5.16665Z'%20fill='%23484747'/%3e%3cpath%20id='Vector_2'%20d='M8.49987%208.57998C7.93987%208.57998%207.37321%208.40665%206.93987%208.05331L4.8532%206.38665C4.63987%206.21331%204.59987%205.89998%204.77321%205.68665C4.94654%205.47331%205.25988%205.43332%205.47321%205.60665L7.55987%207.27332C8.06654%207.67998%208.92654%207.67998%209.4332%207.27332L11.5199%205.60665C11.7332%205.43332%2012.0532%205.46665%2012.2199%205.68665C12.3932%205.89998%2012.3599%206.21998%2012.1399%206.38665L10.0532%208.05331C9.62654%208.40665%209.05987%208.57998%208.49987%208.57998Z'%20fill='%23484747'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="img">
+                            <p class="subtitle2 ml-2">info@abdex.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t-2 border-GrayTint3 w-full my-6"></div>
+            <div class="flex justify-between items-center flex-col sm:flex-row gap-4 sm:gap-0">
+                <div class="flex items-center gap-4">
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Linkedin'%3e%3cpath%20id='Vector'%20d='M12.0264%2024.0071H11.9736C5.37143%2024.0071%200%2018.6341%200%2012.0299V11.9771C0%205.373%205.37143%200%2011.9736%200H12.0264C18.6286%200%2024%205.373%2024%2011.9771V12.0299C24%2018.6341%2018.6286%2024.0071%2012.0264%2024.0071ZM11.9736%200.812614C5.81905%200.812614%200.812375%205.82075%200.812375%2011.9771V12.0299C0.812375%2018.1863%205.81905%2023.1944%2011.9736%2023.1944H12.0264C18.181%2023.1944%2023.1876%2018.1863%2023.1876%2012.0299V11.9771C23.1876%205.82075%2018.181%200.812614%2012.0264%200.812614H11.9736Z'%20fill='%23007EBB'/%3e%3cg%20id='Group'%3e%3cpath%20id='Vector_2'%20d='M5.9363%208.11607C5.63085%207.83246%205.47894%207.48142%205.47894%207.06373C5.47894%206.64605%205.63166%206.27956%205.9363%205.99514C6.24175%205.71154%206.63494%205.56934%207.11668%205.56934C7.59842%205.56934%207.97618%205.71154%208.28082%205.99514C8.58628%206.27875%208.73818%206.63549%208.73818%207.06373C8.73818%207.49198%208.58546%207.83246%208.28082%208.11607C7.97537%208.39967%207.58786%208.54187%207.11668%208.54187C6.64551%208.54187%206.24175%208.39967%205.9363%208.11607ZM8.48148%209.74292V18.4379H5.73483V9.74292H8.48148Z'%20fill='%23007EBB'/%3e%3cpath%20id='Vector_3'%20d='M17.6242%2010.6021C18.2229%2011.2522%2018.5218%2012.1444%2018.5218%2013.2805V18.2845H15.9133V13.6331C15.9133%2013.0603%2015.7646%2012.6149%2015.4681%2012.298C15.1716%2011.9811%2014.7719%2011.8218%2014.2715%2011.8218C13.7711%2011.8218%2013.3714%2011.9803%2013.0749%2012.298C12.7783%2012.6149%2012.6297%2013.0603%2012.6297%2013.6331V18.2845H10.0057V9.71878H12.6297V10.8548C12.8953%2010.4761%2013.2536%2010.1771%2013.7037%209.95687C14.1537%209.73665%2014.6598%209.62695%2015.2228%209.62695C16.2253%209.62695%2017.0262%209.952%2017.6242%2010.6021Z'%20fill='%23007EBB'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Facebook'%3e%3cpath%20id='Vector'%20d='M12.0264%2024.0071H11.9736C5.37142%2024.0071%200%2018.6341%200%2012.0299V11.9771C0%205.37301%205.37142%200%2011.9736%200H12.0264C18.6286%200%2024%205.37301%2024%2011.9771V12.0299C24%2018.6341%2018.6286%2024.0071%2012.0264%2024.0071ZM11.9736%200.812614C5.81904%200.812614%200.812375%205.82076%200.812375%2011.9771V12.0299C0.812375%2018.1863%205.81904%2023.1944%2011.9736%2023.1944H12.0264C18.181%2023.1944%2023.1876%2018.1863%2023.1876%2012.0299V11.9771C23.1876%205.82076%2018.181%200.812614%2012.0264%200.812614H11.9736Z'%20fill='%231877F2'/%3e%3cpath%20id='Vector_2'%20d='M13.6144%209.31229V11.8387H16.7388L16.2441%2015.2419H13.6144V23.0829C13.0872%2023.156%2012.5478%2023.1942%2012.0002%2023.1942C11.3682%2023.1942%2010.7475%2023.1438%2010.1431%2023.0463V15.2419H7.26164V11.8387H10.1431V8.74753C10.1431%206.82976%2011.6972%205.27441%2013.6152%205.27441V5.27603C13.6209%205.27603%2013.6258%205.27441%2013.6315%205.27441H16.7396V8.2177H14.7087C14.1051%208.2177%2013.6152%208.70771%2013.6152%209.31148L13.6144%209.31229Z'%20fill='%231877F2'/%3e%3c/g%3e%3c/svg%3e" alt="">
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='X'%3e%3cpath%20id='Vector'%20d='M12.0264%2024.0071H11.9736C5.37143%2024.0071%200%2018.6341%200%2012.0299V11.9771C0%205.37301%205.37143%200%2011.9736%200H12.0264C18.6286%200%2024%205.37301%2024%2011.9771V12.0299C24%2018.6341%2018.6286%2024.0071%2012.0264%2024.0071ZM11.9736%200.812615C5.81905%200.812615%200.812375%205.82076%200.812375%2011.9771V12.0299C0.812375%2018.1863%205.81905%2023.1945%2011.9736%2023.1945H12.0264C18.181%2023.1945%2023.1876%2018.1863%2023.1876%2012.0299V11.9771C23.1876%205.82076%2018.181%200.812615%2012.0264%200.812615H11.9736Z'%20fill='%23383D38'/%3e%3cg%20id='layer1'%3e%3cpath%20id='path1009'%20d='M5.10898%205.65723L10.456%2012.8082L5.07567%2018.6225H6.28693L10.9979%2013.5323L14.8039%2018.6225H18.925L13.2774%2011.0692L18.2857%205.65723H17.0745L12.7364%2010.3452L9.23097%205.65723H5.10979H5.10898ZM6.8897%206.54948H8.78254L17.1427%2017.7302H15.2499L6.8897%206.54948Z'%20fill='%23383D38'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="">
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Instagram'%3e%3cpath%20id='Vector'%20d='M12.0264%2024.0071H11.9736C5.37143%2024.0071%200%2018.6341%200%2012.0299V11.9771C0%205.37301%205.37143%200%2011.9736%200H12.0264C18.6286%200%2024%205.37301%2024%2011.9771V12.0299C24%2018.6341%2018.6286%2024.0071%2012.0264%2024.0071ZM11.9736%200.812614C5.81904%200.812614%200.812375%205.82076%200.812375%2011.9771V12.0299C0.812375%2018.1863%205.81904%2023.1944%2011.9736%2023.1944H12.0264C18.181%2023.1944%2023.1876%2018.1863%2023.1876%2012.0299V11.9771C23.1876%205.82076%2018.181%200.812614%2012.0264%200.812614H11.9736Z'%20fill='url(%23paint0_linear_142_1270)'/%3e%3cg%20id='Group'%3e%3cpath%20id='Vector_2'%20d='M15.5876%205.125H8.41271C6.43051%205.125%204.81795%206.73804%204.81795%208.72082V15.2867C4.81795%2017.2695%206.43051%2018.8826%208.41271%2018.8826H15.5876C17.5698%2018.8826%2019.1824%2017.2695%2019.1824%2015.2867V8.72082C19.1824%206.73804%2017.5698%205.125%2015.5876%205.125ZM6.08607%208.72082C6.08607%207.4377%207.12997%206.39349%208.41271%206.39349H15.5876C16.8703%206.39349%2017.9143%207.4377%2017.9143%208.72082V15.2867C17.9143%2016.5699%2016.8703%2017.6141%2015.5876%2017.6141H8.41271C7.12997%2017.6141%206.08607%2016.5699%206.08607%2015.2867V8.72082Z'%20fill='url(%23paint1_linear_142_1270)'/%3e%3cpath%20id='Vector_3'%20d='M12.0009%2015.3477C13.8442%2015.3477%2015.3446%2013.8476%2015.3446%2012.0029C15.3446%2010.1583%2013.845%208.6582%2012.0009%208.6582C10.1568%208.6582%208.65716%2010.1583%208.65716%2012.0029C8.65716%2013.8476%2010.1568%2015.3477%2012.0009%2015.3477ZM12.0009%209.92751C13.1455%209.92751%2014.0765%2010.8588%2014.0765%2012.0037C14.0765%2013.1487%2013.1455%2014.08%2012.0009%2014.08C10.8563%2014.08%209.92528%2013.1487%209.92528%2012.0037C9.92528%2010.8588%2010.8563%209.92751%2012.0009%209.92751Z'%20fill='url(%23paint2_linear_142_1270)'/%3e%3cpath%20id='Vector_4'%20d='M15.654%209.19886C16.1503%209.19886%2016.5549%208.79499%2016.5549%208.29767C16.5549%207.80035%2016.1511%207.39648%2015.654%207.39648C15.1568%207.39648%2014.753%207.80035%2014.753%208.29767C14.753%208.79499%2015.1568%209.19886%2015.654%209.19886Z'%20fill='url(%23paint3_linear_142_1270)'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_142_1270'%20x1='3.51109'%20y1='20.4949'%20x2='20.4939'%20y2='3.51711'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FAAD4F'/%3e%3cstop%20offset='0.35'%20stop-color='%23DD2A7B'/%3e%3cstop%20offset='0.62'%20stop-color='%239537B0'/%3e%3cstop%20offset='1'%20stop-color='%23515BD4'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_142_1270'%20x1='6.02433'%20y1='17.9806'%20x2='17.9787'%20y2='6.03053'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FAAD4F'/%3e%3cstop%20offset='0.35'%20stop-color='%23DD2A7B'/%3e%3cstop%20offset='0.62'%20stop-color='%239537B0'/%3e%3cstop%20offset='1'%20stop-color='%23515BD4'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_142_1270'%20x1='9.6377'%20y1='14.3676'%20x2='14.3647'%20y2='9.64124'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FAAD4F'/%3e%3cstop%20offset='0.35'%20stop-color='%23DD2A7B'/%3e%3cstop%20offset='0.62'%20stop-color='%239537B0'/%3e%3cstop%20offset='1'%20stop-color='%23515BD4'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint3_linear_142_1270'%20x1='15.0171'%20y1='8.93476'%20x2='16.2912'%20y2='7.66095'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FAAD4F'/%3e%3cstop%20offset='0.35'%20stop-color='%23DD2A7B'/%3e%3cstop%20offset='0.62'%20stop-color='%239537B0'/%3e%3cstop%20offset='1'%20stop-color='%23515BD4'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="">
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Telegram'%3e%3cpath%20id='Vector'%20d='M12.0264%2024.0071H11.9736C5.37142%2024.0071%200%2018.6341%200%2012.0299V11.9771C0%205.37301%205.37142%200%2011.9736%200H12.0264C18.6286%200%2024%205.37301%2024%2011.9771V12.0299C24%2018.6341%2018.6286%2024.0071%2012.0264%2024.0071ZM11.9736%200.812615C5.81904%200.812615%200.812375%205.82076%200.812375%2011.9771V12.0299C0.812375%2018.1863%205.81904%2023.1945%2011.9736%2023.1945H12.0264C18.181%2023.1945%2023.1876%2018.1863%2023.1876%2012.0299V11.9771C23.1876%205.82076%2018.181%200.812615%2012.0264%200.812615H11.9736Z'%20fill='%2300B0F2'/%3e%3cpath%20id='Vector_2'%20d='M4.79844%2011.608C4.83094%2011.5918%204.86345%2011.5763%204.89513%2011.5617C5.44592%2011.3066%206.00402%2011.0677%206.56131%2010.8287C6.59137%2010.8287%206.64173%2010.7938%206.67016%2010.7824C6.71321%2010.7637%206.75628%2010.7459%206.79933%2010.7272C6.8822%2010.6914%206.96506%2010.6565%207.04711%2010.6207C7.21284%2010.55%207.37774%2010.4793%207.54346%2010.4086C7.8741%2010.2672%208.20473%2010.1258%208.53537%209.98362C9.19664%209.70083%209.85874%209.41723%2010.52%209.13444C11.1813%208.85165%2011.8434%208.56804%2012.5046%208.28525C13.1659%208.00247%2013.828%207.71887%2014.4893%207.43608C15.1505%207.15329%2015.8126%206.86968%2016.4739%206.58689C16.621%206.5235%2016.7802%206.42925%2016.9378%206.40162C17.0702%206.37805%2017.1994%206.33254%2017.3326%206.30735C17.5852%206.25941%2017.8639%206.2399%2018.106%206.34473C18.1896%206.3813%2018.2668%206.43249%2018.331%206.49669C18.6381%206.80061%2018.595%207.29955%2018.53%207.72699C18.0775%2010.706%2017.625%2013.6859%2017.1717%2016.6649C17.11%2017.0737%2017.0255%2017.5222%2016.703%2017.7807C16.43%2017.9992%2016.0417%2018.0236%2015.7046%2017.931C15.3674%2017.8375%2015.0701%2017.6417%2014.7785%2017.4491C13.5689%2016.6479%2012.3584%2015.8466%2011.1488%2015.0454C10.8612%2014.8552%2010.5411%2014.6066%2010.5444%2014.2612C10.546%2014.0532%2010.6703%2013.8679%2010.797%2013.703C11.8482%2012.3313%2013.3649%2011.3886%2014.4933%2010.0803C14.6526%209.89585%2014.7777%209.56269%2014.5591%209.45624C14.4292%209.39285%2014.2797%209.47899%2014.1611%209.56107C12.6695%2010.5971%2011.1789%2011.634%209.68733%2012.6701C9.20072%2013.0082%208.69055%2013.356%208.10401%2013.4389C7.57922%2013.5136%207.05118%2013.3674%206.54344%2013.2178C6.11776%2013.0927%205.69287%2012.9643%205.26962%2012.8318C5.0446%2012.762%204.81226%2012.6864%204.63841%2012.5279C4.46456%2012.3695%204.36465%2012.1029%204.46945%2011.8916C4.53525%2011.7592%204.66279%2011.6755%204.79684%2011.6072L4.79844%2011.608Z'%20fill='%2300B0F2'/%3e%3c/g%3e%3c/svg%3e" alt="">
+                </div>
+                <div>
+                    <p class="subtitle2 text-GrayShade3">© Copyright 2024 by LandaHolding</p>
+                </div>
+            </div>
+        </div>
+    </footer> 
+  
+
+    <!-- <script type="module" src="./script.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            AOS.init();
+        });
+    </script>
+    <!-- Your app's entry point script -->
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// /* Add custom styles or components below */
+// /* Example: */
+// .btn {
+//   @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+// }
+
+
+.Body1 { 
+    /* Body1/45 Book */
+    font-family: Avenir;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 16px; /* 145.455% */
+}
+
+.Body1Medium {
+    /* Body1/65 Medium */
+    font-family: Avenir;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px; /* 145.455% */
+}
+
+.Body1‌Black{
+    /* Body1/95 Black */
+    font-family: Avenir;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 16px; /* 145.455% */
+}
+
+.subtitle2{
+    /* Subtitle2/45 Book */
+    font-family: Avenir;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 20px; /* 153.846% */
+}
+
+.Subtitle2Medium{
+    /* Subtitle2/65 Medium */
+    font-family: Avenir;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 153.846% */
+}
+.Subtitle2Black {
+    /* Subtitle2/65 Medium */
+    font-family: Avenir;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 20px; /* 153.846% */
+}
+
+.Subtitle1Book{
+    font-family: Avenir;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px; /* 150% */
+}
+
+.Subtitle1Medium{
+    font-family: Avenir;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+}
+
+.Subtitle1Black{
+    /* Subtitle1/95 Black */
+    font-family: Avenir;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 24px; /* 150% */
+}
+
+.H6{
+    font-family: Avenir;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 28px; /* 147.368% */
+}
+
+.H6Medium{
+    /* H6/65 Medium */
+    font-family: Avenir;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 147.368% */
+}
+
+.H6Black{
+    /* H6/95 Black */
+    font-family: Avenir;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 28px; /* 147.368% */
+}
+
+.H5{
+    /* H5/45 Book */
+    font-family: Avenir;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 34px; /* 147.826% */
+}
+
+.H5Medium{
+    /* H5/65 Medium */
+    font-family: Avenir;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 34px; /* 147.826% */
+}
+
+.H5Black{
+    /* H5/95 Black */
+    font-family: Avenir;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 34px; /* 147.826% */
+}
+
+.H4{
+    /* H4/45 Book */
+    font-family: Avenir;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 42px; /* 150% */
+}
+
+.H4Medium{
+    /* H4/65 Medium */
+    font-family: Avenir;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px; /* 150% */
+}
+
+.H4Black{
+    /* H4/95 Black */
+    font-family: Avenir;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 42px; /* 150% */
+}
+
+.H3{
+    /* H3/45 Book */
+    font-family: Avenir;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 49px; /* 148.485% */
+}
+
+.H3Medium{
+    font-family: Avenir;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 49px; /* 148.485% */
+}
+
+.H3Black{
+    /* H3/95 Black */
+    font-family: Avenir;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 49px; /* 148.485% */
+}
+
+.H2{
+    /* H2/45 Book */
+    font-family: Avenir;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 60px; /* 150% */
+}
+
+.H2Medium{
+    /* H2/65 Medium */
+    font-family: Avenir;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px; /* 150% */
+}
+
+.H2Black{
+    /* H2/95 Black */
+    font-family: Avenir;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 60px; /* 150% */
+}
+
+.H1{
+    font-family: Didot;
+    font-size: 50px;    
+    font-style: normal;
+    font-weight: 400;
+    line-height: 75px; /* 150% */
+}
+
+.Display1{
+    font-family: Didot;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144px; /* 225% */
+}
+
+.my-shadow{
+    box-shadow: 0px 4px 12px 0px rgba(50, 20, 11, 0.06)
+}
+
+.my-shadow-hover:hover{
+    box-shadow: 0px 4px 14px 0px rgba(50, 20, 11, 0.10)
+}
+
+
+
+.custom-input {
+    border: none; 
+}
+
+.custom-input:focus {
+    border: none; 
+}
+
+.bgblur{
+    background-color: rgba(50, 20, 11, 0.32);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.bgblur-hover:hover{
+    background-color: rgba(50, 20, 11, 0.32);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+}
+
+.my-opacity:hover{
+    background: linear-gradient(0deg, rgba(50, 20, 11, 0.24) 0%, rgba(50, 20, 11, 0.24) 100%);
+}
+
+// .my-bordercolor {
+//     // border-image: linear-gradient(180deg, rgba(255, 253, 248, 0.25) 0%, #FFFDF8 100%) 1;
+//     // border-radius: 6px 0 0 6px;
+//     // border: 1px solid transparent; /* Set a transparent border to reserve space for the box-shadow */
+//     border-image: linear-gradient(180deg, rgba(255, 253, 248, 0.25) 0%, #FFFDF8 100%);
+//     border-image-slice: 1; /* Ensure the entire border is covered by the gradient */
+//     border-radius: 6px 0 0 6px; /* Apply border-radius */
+//     // padding: 10px; /* Add padding to prevent content from touching the border */
+//     // position: relative;
+//   }
+
+// .my-bordercolor::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     border-radius: inherit; /* Inherit border-radius from the parent */
+//     box-shadow: 0 0 0 1px rgba(255, 253, 248, 0.25), 0 0 0 1px #FFFDF8; /* Use box-shadow for border-radius effect */
+//     z-index: -1; /* Place the box-shadow layer behind the main element */
+// }
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#three-canvas {
+    border: crimson;
+    width: 100%;
+    max-width: 1440px;
+    height: 80vh;
+    // margin-left: 45px;
+    // margin-top: 20px;
+}
+
+#s {
+    text-indent: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 100px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: bisque;
+}
+
+@font-face {
+    font-family: Didot;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./didot/eot/DidotTitle.eot'); /* IE9 Compat Modes */
+    src: url('./didot/eot/DidotTitle.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('./didot/woff2/DidotTitle.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('./didot/woff/DidotTitle.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('./didot/ttf/DidotTitle.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./didot/svg/DidotTitle.svg') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 750;
+    font-display: swap;
+    src: url('./avenir/eot/AvenirLTStd-Black.eot'); /* IE9 Compat Modes */
+    src: url('./avenir/eot/AvenirLTStd-Black.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('./avenir/woff2/AvenirLTStd-Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('./avenir/woff/AvenirLTStd-Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('./avenir/ttf/AvenirLTStd-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./avenir/svg/AvenirLTStd-Black.svg') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('./avenir/eot/AvenirLTStd-Roman.eot'); /* IE9 Compat Modes */
+    src: url('./avenir/eot/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('./avenir/woff2/AvenirLTStd-Roman.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('./avenir/woff/AvenirLTStd-Roman.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('./avenir/ttf/AvenirLTStd-Roman.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./avenir/svg/AvenirLTStd-Roman.svg') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 350;
+    font-display: swap;
+    src: url('./avenir/eot/AvenirLTStd-Book.eot'); /* IE9 Compat Modes */
+    src: url('./avenir/eot/AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('./avenir/woff2/AvenirLTStd-Book.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('./avenir/woff/AvenirLTStd-Book.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('./avenir/ttf/AvenirLTStd-Book.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./avenir/svg/AvenirLTStd-Book.svg') format('svg'); /* Legacy iOS */
+}
+
+
+
+
+
